@@ -28,32 +28,20 @@ const Home: NextPage = () => {
       </Head>
 
       {/* Hero Section */}
+
       <section className="relative h-screen flex items-center justify-center">
         <div className="container mx-auto px-6 text-center">
-        <h1 className="text-5xl md:text-6xl font-bold text-white mb-8">
-
-        遇见你的数字伙伴
-
-        </h1>
-
-        <p className="text-xl text-gray-300 mb-12">
-
-        AI驱动的个性化数字伙伴，陪伴你的学习、工作与生活
-
-        </p>
-
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-8">
+            遇见你的数字伙伴
+          </h1>
+          <p className="text-xl text-gray-300 mb-12">
+            AI驱动的个性化数字伙伴，陪伴你的学习、工作与生活
+          </p>
           <div className="flex justify-center gap-4">
-            <button 
-              onClick={() => {
-                document.getElementById('features')?.scrollIntoView({ 
-                  behavior: 'smooth' 
-                });
-              }}
-              className="bg-blue-600 text-white px-8 py-3 rounded-lg"
-            >
+            <button className="bg-blue-600 text-white px-8 py-3 rounded-lg">
               立即体验
             </button>
-            <button 
+            <button className="border border-white text-white px-8 py-3 rounded-lg">
               了解更多
             </button>
           </div>
