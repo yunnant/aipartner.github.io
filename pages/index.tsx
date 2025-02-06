@@ -24,7 +24,7 @@ const Home: NextPage = () => {
         <meta name="theme-color" content="#1a1a1a" />
         
         {/* 百度站长验证 */}
-        <meta name="baidu-site-verification" content="codeva-9kxa5ZyzPQ" />
+        <meta name="baidu-site-verification" content="codeva-InI8p1ia95" />
       </Head>
 
       {/* Hero Section */}
