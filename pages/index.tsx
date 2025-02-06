@@ -88,8 +88,13 @@ const Home: NextPage = () => {
             />
             <FeatureCard 
               title="灵核设置"
-              description="用户可以设置AI的大脑，已经接入了Deepseek,Openai,Claude.豆包，kimi等API，一方面保护隐私另一方面实现多样化，和不同的工作任务匹配"
+              description="用户可以设置AI的大脑，保护隐私的同时还能实现针对不同功能的多样化，目前已经接入了Deepseek,Openai,Claude,豆包,kimi等API"
               icon="💎"
+            />
+            <FeatureCard 
+              title="技能系统"
+              description=""
+              icon="⚡"
             />
           </div>
         </div>
