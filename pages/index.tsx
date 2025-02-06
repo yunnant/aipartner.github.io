@@ -45,7 +45,7 @@ const Home: NextPage = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gray-800">
+      <section className="py-20 bg-gray-700">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center text-white mb-12">
             核心特性
@@ -85,6 +85,11 @@ const Home: NextPage = () => {
               title="竞技对战"
               description="创新的对战系统，包括知识竞技、战斗竞技和创意竞技，提供多样化的挑战"
               icon="⚔️"
+            />
+            <FeatureCard 
+              title="灵核设置"
+              description="用户可以设置AI的大脑，已经接入了Deepseek,Openai,Claude.豆包，kimi等API，一方面保护隐私另一方面实现多样化，和不同的工作任务匹配"
+              icon="💎"
             />
           </div>
         </div>
@@ -253,10 +258,10 @@ interface FeatureCardProps {
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, icon }) => {
   return (
-    <div className="bg-gray-700 p-6 rounded-lg">
+    <div className="bg-gray-800 p-8 rounded-lg">
       <div className="text-4xl mb-4">{icon}</div>
-      <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
-      <p className="text-gray-300">{description}</p>
+      <h3 className="text-2xl font-bold text-white mb-3">{title}</h3>
+      <p className="text-gray-300 mb-6">{description}</p>
     </div>
   )
 }
