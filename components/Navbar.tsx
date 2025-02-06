@@ -4,20 +4,28 @@ import { useState } from 'react'
 type NavLinkProps = {
   href: string
   children: React.ReactNode
+  onClick?: () => void
 }
 
-const NavLink = ({ href, children }: NavLinkProps) => {
+const NavLink = ({ href, children, onClick }: NavLinkProps) => {
   return (
-    <Link href={href}>
-      <span className="text-gray-300 hover:text-white transition-colors">
-        {children}
-      </span>
-    </Link>
+    <span 
+      className="text-gray-300 hover:text-white transition-colors cursor-pointer"
+      onClick={onClick}
+    >
+      {children}
+    </span>
   )
 }
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
+
+  const scrollToFeatures = () => {
+    document.getElementById('features')?.scrollIntoView({ 
+      behavior: 'smooth' 
+    })
+  }
 
   return (
     <nav className="fixed w-full bg-gray-900 bg-opacity-90 backdrop-blur z-50">
@@ -28,9 +36,9 @@ const Navbar = () => {
           </Link>
           
           <div className="hidden md:flex space-x-8">
-            <NavLink href="/">特性</NavLink>
-            <NavLink href="/evolution">文档</NavLink>
-            <NavLink href="/battle">定价</NavLink>
+            <NavLink href="#" onClick={scrollToFeatures}>特性</NavLink>
+            <NavLink href="/documents">文档</NavLink>
+            <NavLink href="/price">定价</NavLink>
             <NavLink href="/download">下载</NavLink>
           </div>
         </div>
@@ -39,4 +47,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar 
+export default Navbar

@@ -30,17 +30,26 @@ const Home: NextPage = () => {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-8">
-            遇见你的数灵伙伴
-          </h1>
-          <p className="text-xl text-gray-300 mb-12">
-            AI驱动的个性化数字伙伴，陪伴你的学习、工作与生活
-          </p>
+          {/* ... existing title and description ... */}
           <div className="flex justify-center gap-4">
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-lg">
+            <button 
+              onClick={() => {
+                document.getElementById('features')?.scrollIntoView({ 
+                  behavior: 'smooth' 
+                });
+              }}
+              className="bg-blue-600 text-white px-8 py-3 rounded-lg"
+            >
               立即体验
             </button>
-            <button className="border border-white text-white px-8 py-3 rounded-lg">
+            <button 
+              onClick={() => {
+                document.getElementById('features')?.scrollIntoView({ 
+                  behavior: 'smooth' 
+                });
+              }}
+              className="border border-white text-white px-8 py-3 rounded-lg"
+            >
               了解更多
             </button>
           </div>
@@ -48,6 +57,7 @@ const Home: NextPage = () => {
       </section>
 
       {/* Features Section */}
+      <section id="features" className="py-20 bg-gray-700"></section>
       <section className="py-20 bg-gray-700">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center text-white mb-12">
@@ -103,6 +113,7 @@ const Home: NextPage = () => {
 
           </div>
         </div>
+      </section>
       </section>
  {/* Evolution System */}
  <section className="py-20 bg-gray-900">
