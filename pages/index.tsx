@@ -31,7 +31,7 @@ const Home: NextPage = () => {
       <section className="relative h-screen flex items-center justify-center">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-8">
-            遇见你的数字伙伴
+            遇见你的数灵伙伴
           </h1>
           <p className="text-xl text-gray-300 mb-12">
             AI驱动的个性化数字伙伴，陪伴你的学习、工作与生活
@@ -65,6 +65,11 @@ const Home: NextPage = () => {
               icon="⚡"
             />
             <FeatureCard 
+              title="技能系统"
+              description="多层次技能成长体系，从基础生活服务到专业领域技能，支持自定义技能开发和社区共享。基于大语言模型的智能连接，让每个技能都能高效精准地完成任务。"
+              icon="⚡"
+            />
+            <FeatureCard 
               title="知识成长"
               description="独特的知识库系统，数灵可以使用公开知识库也可以使用用户上传的私有知识库增强能力"
               icon="📚"
@@ -73,6 +78,11 @@ const Home: NextPage = () => {
               title="长期记忆"
               description="AI伙伴会记住与你的每次互动，形成持久的情感联系，建立真正的默契"
               icon="💭"
+            />
+            <FeatureCard 
+              title="灵核设置"
+              description="用户可以设置AI的大脑，保护隐私的同时还能实现针对不同功能的多样化，目前已经接入了Deepseek,Openai,Claude,豆包,kimi等API"
+              icon="💎"
             />
             <FeatureCard 
               title="大世界探索"
@@ -89,15 +99,37 @@ const Home: NextPage = () => {
               description="创新的对战系统，包括知识竞技、战斗竞技和创意竞技，提供多样化的挑战"
               icon="⚔️"
             />
-            <FeatureCard 
-              title="灵核设置"
-              description="用户可以设置AI的大脑，保护隐私的同时还能实现针对不同功能的多样化，目前已经接入了Deepseek,Openai,Claude,豆包,kimi等API"
-              icon="💎"
+
+
+          </div>
+        </div>
+      </section>
+ {/* Evolution System */}
+ <section className="py-20 bg-gray-900">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center text-white mb-12">
+            进化之路
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <EvolutionCard 
+              stage="蛋形态"
+              description="神秘的数灵蛋中蕴含着无限可能，基于用户的个性和特点孕育独特的生命"
+              icon="🥚"
             />
-            <FeatureCard 
-              title="技能系统"
-              description="多层次技能成长体系，从基础生活服务到专业领域技能，支持自定义技能开发和社区共享。基于大语言模型的智能连接，让每个技能都能高效精准地完成任务。"
-              icon="⚡"
+            <EvolutionCard 
+              stage="幼年态"
+              description="活泼可爱的初始形态，开始展现属性特征，陪伴用户踏上成长之旅"
+              icon="🐣"
+            />
+            <EvolutionCard 
+              stage="成年态"
+              description="强大而成熟的形态，掌握了完整的技能体系，成为得力的助手"
+              icon="🦋"
+            />
+            <EvolutionCard 
+              stage="化形态"
+              description="最终的蜕变形态，拥有人类的外表，保留原有特征，达到真正的人工智能伙伴"
+              icon="👤"
             />
           </div>
         </div>
@@ -143,81 +175,6 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      {/* Trading System */}
-      <section className="py-20 bg-gray-700">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-white mb-12">
-            交易市场
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <MarketCard 
-              title="知识库交易"
-              description="用户可以上传、分享和交易自己的专业知识库"
-              features={[
-                '专业领域知识库',
-                '行业数据集',
-                '研究报告库',
-                '教育资源库'
-              ]}
-              icon="📚"
-            />
-            <MarketCard 
-              title="技能交易"
-              description="开发者可以创建、分享和交易自定义技能"
-              features={[
-                '自定义技能包',
-                '专业工具集',
-                '行业解决方案',
-                '创意玩法'
-              ]}
-              icon="🛠️"
-            />
-            <MarketCard 
-              title="佣兵团招募"
-              description="招募专业的AI智能体团队，协同完成复杂任务"
-              features={[
-                '开发团队组合',
-                '设计创意团队',
-                '营销策划团队',
-                '研究分析团队'
-              ]}
-              icon="👥"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Evolution System */}
-      <section className="py-20 bg-gray-900">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-white mb-12">
-            进化之路
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <EvolutionCard 
-              stage="蛋形态"
-              description="神秘的数灵蛋中蕴含着无限可能，基于用户的个性和特点孕育独特的生命"
-              icon="🥚"
-            />
-            <EvolutionCard 
-              stage="幼年态"
-              description="活泼可爱的初始形态，开始展现属性特征，陪伴用户踏上成长之旅"
-              icon="🐣"
-            />
-            <EvolutionCard 
-              stage="成年态"
-              description="强大而成熟的形态，掌握了完整的技能体系，成为得力的助手"
-              icon="🦋"
-            />
-            <EvolutionCard 
-              stage="化形态"
-              description="最终的蜕变形态，拥有人类的外表，保留原有特征，达到真正的人工智能伙伴"
-              icon="👤"
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Exploration System */}
       <section className="py-20 bg-gray-800">
         <div className="container mx-auto px-6">
@@ -254,6 +211,52 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
+      {/* Trading System */}
+      <section className="py-20 bg-gray-700">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center text-white mb-12">
+            交易市场
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <MarketCard 
+              title="知识库交易"
+              description="用户可以上传、分享和交易自己的专业知识库"
+              features={[
+                '专业领域知识库',
+                '行业数据集',
+                '研究报告库',
+                '教育资源库'
+              ]}
+              icon="📚"
+            />
+            <MarketCard 
+              title="技能交易"
+              description="开发者可以创建、分享和交易自定义技能"
+              features={[
+                '自定义技能包',
+                '专业工具集',
+                '行业解决方案',
+                '创意玩法'
+              ]}
+              icon="🛠️"
+            />
+            <MarketCard 
+              title="专业智能体雇佣"
+              description="训练最强AI，或者招募最强AI"
+              features={[
+                '通过对战选出最强AI',
+                '让AI自己去打工',
+                '雇佣别人的最强AI',
+                '完成你的复杂任务'
+              ]}
+              icon="🤖"
+            />
+          </div>
+        </div>
+      </section>
+
+    
+
     </div>
   )
 }
