@@ -43,13 +43,6 @@ const Home: NextPage = () => {
               立即体验
             </button>
             <button 
-              onClick={() => {
-                document.getElementById('features')?.scrollIntoView({ 
-                  behavior: 'smooth' 
-                });
-              }}
-              className="border border-white text-white px-8 py-3 rounded-lg"
-            >
               了解更多
             </button>
           </div>
@@ -57,7 +50,7 @@ const Home: NextPage = () => {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 bg-gray-700"></section>
+
       <section className="py-20 bg-gray-700">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center text-white mb-12">
@@ -114,7 +107,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
-      </section>
+
  {/* Evolution System */}
  <section className="py-20 bg-gray-900">
         <div className="container mx-auto px-6">
@@ -337,10 +330,10 @@ interface MarketCardProps {
 
 const MarketCard: React.FC<MarketCardProps> = ({ title, description, features, icon }) => {
   return (
-    <div className="bg-gray-800 p-8 rounded-lg">
+    <div className="bg-gray-700 p-6 rounded-lg">
       <div className="text-4xl mb-4">{icon}</div>
       <h3 className="text-2xl font-bold text-white mb-3">{title}</h3>
-      <p className="text-gray-300 mb-6">{description}</p>
+      <p className="text-gray-300 mb-4">{description}</p>
       <ul className="space-y-3">
         {features.map((feature, index) => (
           <li key={index} className="flex items-center text-gray-200">

@@ -6,5 +6,5 @@ export default function handler(
 ) {
   // 返回验证码
   res.setHeader('Content-Type', 'text/html')
-  res.status(200).send('a752a595e57caaf85c705c8cba2890fb')
+  res.status(200).send('34860741839281fdd4ace3645b29c02b')
 } 
