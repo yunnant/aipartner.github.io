@@ -57,6 +57,7 @@ const Home: NextPage = () => {
       </section>
 
       {/* Features Section */}
+      <section id="features" className="py-20 bg-gray-700"></section>
       <section className="py-20 bg-gray-700">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center text-white mb-12">
@@ -112,6 +113,7 @@ const Home: NextPage = () => {
 
           </div>
         </div>
+      </section>
       </section>
  {/* Evolution System */}
  <section className="py-20 bg-gray-900">
