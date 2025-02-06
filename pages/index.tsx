@@ -63,7 +63,7 @@ const Home: NextPage = () => {
             />
             <FeatureCard 
               title="知识成长"
-              description="独特的知识库系统，记录每一次对话和学习，建立专属的知识图谱"
+              description="独特的知识库系统，数灵可以使用公开知识库也可以使用用户上传的私有知识库增强能力"
               icon="📚"
             />
             <FeatureCard 
@@ -80,6 +80,68 @@ const Home: NextPage = () => {
               title="竞技对战"
               description="创新的对战系统，包括知识竞技、战斗竞技和创意竞技，提供多样化的挑战"
               icon="⚔️"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Skills System */}
+      <section className="py-20 bg-gray-800">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center text-white mb-12">
+            技能体系
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <SkillCard 
+              title="基础技能"
+              description="包括对话、计算、搜索、提醒等日常生活必备技能"
+              skills={['智能对话', '数学计算', '信息搜索', '日程提醒']}
+              icon="⚡"
+            />
+            <SkillCard 
+              title="专业技能"
+              description="编程开发、文档处理、数据分析等专业领域技能"
+              skills={['代码编写', 'API调用', '文档生成', '数据可视化']}
+              icon="💻"
+            />
+            <SkillCard 
+              title="创意技能"
+              description="图像生成、文案创作、视频制作等创意类技能"
+              skills={['AI绘画', '文案写作', '视频剪辑', '音乐创作']}
+              icon="🎨"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Trading System */}
+      <section className="py-20 bg-gray-700">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center text-white mb-12">
+            交易市场
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <MarketCard 
+              title="知识库交易"
+              description="用户可以上传、分享和交易自己的专业知识库"
+              features={[
+                '专业领域知识库',
+                '行业数据集',
+                '研究报告库',
+                '教育资源库'
+              ]}
+              icon="📚"
+            />
+            <MarketCard 
+              title="技能交易"
+              description="开发者可以创建、分享和交易自定义技能"
+              features={[
+                '自定义技能包',
+                '专业工具集',
+                '行业解决方案',
+                '创意玩法'
+              ]}
+              icon="🛠️"
             />
           </div>
         </div>
@@ -147,6 +209,55 @@ const EvolutionCard: React.FC<EvolutionCardProps> = ({ stage, description, icon 
       <div className="text-4xl mb-4">{icon}</div>
       <h3 className="text-xl font-bold text-white mb-2">{stage}</h3>
       <p className="text-gray-300">{description}</p>
+    </div>
+  )
+}
+
+interface SkillCardProps {
+  title: string;
+  description: string;
+  skills: string[];
+  icon: string;
+}
+
+const SkillCard: React.FC<SkillCardProps> = ({ title, description, skills, icon }) => {
+  return (
+    <div className="bg-gray-700 p-6 rounded-lg">
+      <div className="text-4xl mb-4">{icon}</div>
+      <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
+      <p className="text-gray-300 mb-4">{description}</p>
+      <div className="grid grid-cols-2 gap-2">
+        {skills.map((skill, index) => (
+          <span key={index} className="text-sm bg-gray-600 text-gray-200 px-2 py-1 rounded">
+            {skill}
+          </span>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+interface MarketCardProps {
+  title: string;
+  description: string;
+  features: string[];
+  icon: string;
+}
+
+const MarketCard: React.FC<MarketCardProps> = ({ title, description, features, icon }) => {
+  return (
+    <div className="bg-gray-800 p-8 rounded-lg">
+      <div className="text-4xl mb-4">{icon}</div>
+      <h3 className="text-2xl font-bold text-white mb-3">{title}</h3>
+      <p className="text-gray-300 mb-6">{description}</p>
+      <ul className="space-y-3">
+        {features.map((feature, index) => (
+          <li key={index} className="flex items-center text-gray-200">
+            <span className="mr-2">✓</span>
+            {feature}
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
