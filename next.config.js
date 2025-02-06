@@ -10,7 +10,7 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/baidu_verify_codeva-9kxa5ZyzPQ.html',
+        source: '/baidu_verify_codeva-InI8p1ia95.html',
         destination: '/api/baidu-verify'
       },
     ]
