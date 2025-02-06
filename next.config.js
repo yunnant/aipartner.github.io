@@ -7,6 +7,14 @@ const nextConfig = {
   basePath: '',
   assetPrefix: '',
   trailingSlash: true,
+  async rewrites() {
+    return [
+      {
+        source: '/baidu_verify_codeva-9kxa5ZyzPQ.html',
+        destination: '/api/baidu-verify'
+      },
+    ]
+  }
 }
 
 module.exports = nextConfig 
