@@ -6,8 +6,22 @@ const Home: NextPage = () => {
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">
       <Head>
         <title>数灵伙伴 - 你的AI数字伙伴</title>
-        <meta name="description" content="个性化AI伙伴，陪伴你的每一天" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="个性化AI伙伴，陪伴你的学习、工作与生活" />
+        
+        {/* 基础图标 */}
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        
+        {/* PWA图标 */}
+        <link rel="icon" type="image/png" sizes="192x192" href="/icon.png" />
+        
+        {/* iOS图标 */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        
+        {/* PWA manifest */}
+        <link rel="manifest" href="/manifest.json" />
+        
+        {/* 主题色 */}
+        <meta name="theme-color" content="#1a1a1a" />
       </Head>
 
       {/* Hero Section */}
