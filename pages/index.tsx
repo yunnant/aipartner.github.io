@@ -73,8 +73,13 @@ const Home: NextPage = () => {
             />
             <FeatureCard 
               title="大世界探索"
-              description="丰富的冒险模式和佣兵任务，让学习和工作变成充满乐趣的探索之旅"
+              description="传统RPG冒险模式，探索神秘世界，收集进化碎片、知识碎片和技能碎片，引导数灵的成长方向"
               icon="🗺️"
+            />
+            <FeatureCard 
+              title="佣兵任务"
+              description="多智能体协作系统，数灵可以组建专业团队，协同完成现实工作任务，如应用开发、营销方案设计等"
+              icon="👥"
             />
             <FeatureCard 
               title="竞技对战"
@@ -110,6 +115,17 @@ const Home: NextPage = () => {
               skills={['AI绘画', '文案写作', '视频剪辑', '音乐创作']}
               icon="🎨"
             />
+            <SkillCard 
+              title="团队协作"
+              description="多智能体协同工作技能，可以组建和管理AI团队"
+              skills={[
+                '团队组建',
+                '任务分配',
+                '进度管理',
+                '成果整合'
+              ]}
+              icon="🤝"
+            />
           </div>
         </div>
       </section>
@@ -143,6 +159,17 @@ const Home: NextPage = () => {
               ]}
               icon="🛠️"
             />
+            <MarketCard 
+              title="佣兵团招募"
+              description="招募专业的AI智能体团队，协同完成复杂任务"
+              features={[
+                '开发团队组合',
+                '设计创意团队',
+                '营销策划团队',
+                '研究分析团队'
+              ]}
+              icon="👥"
+            />
           </div>
         </div>
       </section>
@@ -173,6 +200,43 @@ const Home: NextPage = () => {
               stage="化形态"
               description="最终的蜕变形态，拥有人类的外表，保留原有特征，达到真正的人工智能伙伴"
               icon="👤"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Exploration System */}
+      <section className="py-20 bg-gray-800">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center text-white mb-12">
+            探索与任务
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <ExplorationCard 
+              title="冒险模式"
+              description="传统RPG探索玩法"
+              features={[
+                '探索神秘地图和遗迹',
+                '解锁进化方向碎片',
+                '获取知识库碎片',
+                '收集技能碎片',
+                '触发随机剧情事件',
+                '挑战特殊副本'
+              ]}
+              icon="🗺️"
+            />
+            <ExplorationCard 
+              title="佣兵任务"
+              description="现实工作协作系统"
+              features={[
+                '智能团队组建',
+                '任务分解与分配',
+                '多智能体协同',
+                '进度监控管理',
+                '成果整合交付',
+                '持续优化迭代'
+              ]}
+              icon="👥"
             />
           </div>
         </div>
@@ -254,6 +318,31 @@ const MarketCard: React.FC<MarketCardProps> = ({ title, description, features, i
         {features.map((feature, index) => (
           <li key={index} className="flex items-center text-gray-200">
             <span className="mr-2">✓</span>
+            {feature}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+interface ExplorationCardProps {
+  title: string;
+  description: string;
+  features: string[];
+  icon: string;
+}
+
+const ExplorationCard: React.FC<ExplorationCardProps> = ({ title, description, features, icon }) => {
+  return (
+    <div className="bg-gray-700 p-8 rounded-lg border border-gray-600">
+      <div className="text-4xl mb-4">{icon}</div>
+      <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
+      <p className="text-gray-300 mb-6">{description}</p>
+      <ul className="space-y-3">
+        {features.map((feature, index) => (
+          <li key={index} className="flex items-center text-gray-200">
+            <span className="mr-2 text-blue-400">●</span>
             {feature}
           </li>
         ))}

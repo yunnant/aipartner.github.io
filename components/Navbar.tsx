@@ -29,8 +29,8 @@ const Navbar = () => {
           
           <div className="hidden md:flex space-x-8">
             <NavLink href="/features">特性</NavLink>
-            <NavLink href="/evolution">进化系统</NavLink>
-            <NavLink href="/battle">对战系统</NavLink>
+            <NavLink href="/evolution">文档</NavLink>
+            <NavLink href="/battle">定价</NavLink>
             <NavLink href="/download">下载</NavLink>
           </div>
         </div>
