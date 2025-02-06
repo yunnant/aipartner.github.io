@@ -24,7 +24,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/">
-            <span className="text-2xl font-bold text-white">数晶伙伴</span>
+            <span className="text-2xl font-bold text-white">数灵伙伴</span>
           </Link>
           
           <div className="hidden md:flex space-x-8">
