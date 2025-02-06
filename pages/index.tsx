@@ -326,10 +326,10 @@ interface MarketCardProps {
 
 const MarketCard: React.FC<MarketCardProps> = ({ title, description, features, icon }) => {
   return (
-    <div className="bg-gray-700 p-6 rounded-lg">
+    <div className="bg-gray-800 p-8 rounded-lg">
       <div className="text-4xl mb-4">{icon}</div>
       <h3 className="text-2xl font-bold text-white mb-3">{title}</h3>
-      <p className="text-gray-300 mb-4">{description}</p>
+      <p className="text-gray-300 mb-6">{description}</p>
       <ul className="space-y-3">
         {features.map((feature, index) => (
           <li key={index} className="flex items-center text-gray-200">
