@@ -30,7 +30,18 @@ const Home: NextPage = () => {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center">
         <div className="container mx-auto px-6 text-center">
-          {/* ... existing title and description ... */}
+        <h1 className="text-5xl md:text-6xl font-bold text-white mb-8">
+
+        遇见你的数字伙伴
+
+        </h1>
+
+        <p className="text-xl text-gray-300 mb-12">
+
+        AI驱动的个性化数字伙伴，陪伴你的学习、工作与生活
+
+        </p>
+
           <div className="flex justify-center gap-4">
             <button 
               onClick={() => {
