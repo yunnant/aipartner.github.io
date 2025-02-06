@@ -22,6 +22,9 @@ const Home: NextPage = () => {
         
         {/* 主题色 */}
         <meta name="theme-color" content="#1a1a1a" />
+        
+        {/* 百度站长验证 */}
+        <meta name="baidu-site-verification" content="codeva-9kxa5ZyzPQ" />
       </Head>
 
       {/* Hero Section */}
@@ -93,7 +96,7 @@ const Home: NextPage = () => {
             />
             <FeatureCard 
               title="技能系统"
-              description=""
+              description="多层次技能成长体系，从基础生活服务到专业领域技能，支持自定义技能开发和社区共享。基于大语言模型的智能连接，让每个技能都能高效精准地完成任务。"
               icon="⚡"
             />
           </div>
