@@ -17,4 +17,34 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.infinite-scroll-track {
+  display: flex;
+  animation: scroll 40s linear infinite;
+}
+
+.infinite-scroll-track-reverse {
+  display: flex;
+  animation: scroll 40s linear infinite reverse;
+}
+
+.infinite-scroll-content {
+  display: flex;
+  gap: 1rem;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* 当用户hover时暂停动画 */
+.infinite-scroll-track:hover,
+.infinite-scroll-track-reverse:hover {
+  animation-play-state: paused;
 } 

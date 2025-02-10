@@ -48,17 +48,17 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      {/* 在Hero Section下方添加图片墙 */}
+      {/* 图片墙 */}
       <section className="w-full overflow-hidden bg-gradient-to-b from-transparent to-gray-900/30 py-16">
         <div className="relative">
           {/* 上层渐变遮罩 */}
-          <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-[#1a1f2e] to-transparent z-10"></div>
+          <div className="absolute top-0 left-0 right-0 h-25 bg-gradient-to-b from-[#1a1f2e] to-transparent z-10"></div>
           
-          {/* 图片墙容器 - 两行无缝滚动 */}
-          <div className="flex flex-col gap-4">
-            {/* 第一行 - 向右滚动 */}
-            <div className="flex animate-scroll-right">
-              <div className="flex gap-4 animate-scroll whitespace-nowrap">
+          {/* 第一行 - 向左滚动 */}
+          <div className="relative">
+            <div className="flex gap-4 infinite-scroll-track">
+              {/* 第一组图片 */}
+              <div className="flex gap-4 infinite-scroll-content">
                 {[...Array(20)].map((_, index) => (
                   <div key={`spirit-1-${index}`} className="w-48 h-48 flex-shrink-0 rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer">
                     <img
@@ -69,8 +69,8 @@ const Home: NextPage = () => {
                   </div>
                 ))}
               </div>
-              {/* 复制一份实现无缝循环 */}
-              <div className="flex gap-4 animate-scroll whitespace-nowrap">
+              {/* 复制第一组图片以实现无缝效果 */}
+              <div className="flex gap-4 infinite-scroll-content">
                 {[...Array(20)].map((_, index) => (
                   <div key={`spirit-1-${index}-clone`} className="w-48 h-48 flex-shrink-0 rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer">
                     <img
@@ -82,10 +82,13 @@ const Home: NextPage = () => {
                 ))}
               </div>
             </div>
+          </div>
 
-            {/* 第二行 - 向左滚动 */}
-            <div className="flex animate-scroll-left">
-              <div className="flex gap-4 animate-scroll whitespace-nowrap">
+          {/* 第二行 - 向右滚动 */}
+          <div className="relative mt-4">
+            <div className="flex gap-4 infinite-scroll-track-reverse">
+              {/* 第一组图片 */}
+              <div className="flex gap-4 infinite-scroll-content">
                 {[...Array(20)].map((_, index) => (
                   <div key={`spirit-2-${index}`} className="w-48 h-48 flex-shrink-0 rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer">
                     <img
@@ -96,8 +99,8 @@ const Home: NextPage = () => {
                   </div>
                 ))}
               </div>
-              {/* 复制一份实现无缝循环 */}
-              <div className="flex gap-4 animate-scroll whitespace-nowrap">
+              {/* 复制第一组图片以实现无缝效果 */}
+              <div className="flex gap-4 infinite-scroll-content">
                 {[...Array(20)].map((_, index) => (
                   <div key={`spirit-2-${index}-clone`} className="w-48 h-48 flex-shrink-0 rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer">
                     <img
@@ -110,9 +113,9 @@ const Home: NextPage = () => {
               </div>
             </div>
           </div>
-          
+
           {/* 下层渐变遮罩 */}
-          <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#1a1f2e] to-transparent z-10"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-25 bg-gradient-to-t from-[#1a1f2e] to-transparent z-10"></div>
         </div>
       </section>
 
