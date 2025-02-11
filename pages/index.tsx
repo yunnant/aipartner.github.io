@@ -1,7 +1,21 @@
 import Head from 'next/head'
 import type { NextPage } from 'next'
+import { useEffect, useState } from 'react'
+
+const generateRandomImages = (count: number) => {
+  const images = Array.from({length: count}, (_, i) => `/images/spirits/spirit-${i + 1}.png`);
+  return [...images].sort(() => Math.random() - 0.5);
+};
 
 const Home: NextPage = () => {
+  const [randomImages1, setRandomImages1] = useState<string[]>([]);
+  const [randomImages2, setRandomImages2] = useState<string[]>([]);
+
+  useEffect(() => {
+    setRandomImages1(generateRandomImages(70));
+    setRandomImages2(generateRandomImages(70));
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">
       <Head>
@@ -51,32 +65,22 @@ const Home: NextPage = () => {
       {/* 图片墙 */}
       <section className="w-full overflow-hidden bg-gradient-to-b from-transparent to-gray-900/30 py-16">
         <div className="relative">
-          {/* 上层渐变遮罩 */}
-          <div className="absolute top-0 left-0 right-0 h-25 bg-gradient-to-b from-[#1a1f2e] to-transparent z-10"></div>
-          
-          {/* 第一行 - 向左滚动 */}
+          {/* First row - left scroll */}
           <div className="relative">
-            <div className="flex gap-4 infinite-scroll-track">
-              {/* 第一组图片 */}
-              <div className="flex gap-4 infinite-scroll-content">
-                {[...Array(30)].map((_, index) => (
-                  <div key={`spirit-1-${index}`} className="w-48 h-48 flex-shrink-0 rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer">
+            <div className="mask-left image-wall-mask" />
+            <div className="mask-right image-wall-mask" />
+            <div className="flex gap-4 overflow-hidden">
+              <div className="flex gap-4 animate-infinite-scroll">
+                {[...randomImages1, ...randomImages1].map((src, index) => (
+                  <div 
+                    key={`spirit-1-${index}`} 
+                    className="w-48 h-48 flex-shrink-0 rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer"
+                  >
                     <img
-                      src={`/images/spirits/spirit-${index + 1}.png`}
+                      src={src}
                       alt={`数灵形象 ${index + 1}`}
                       className="w-full h-full object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
-              {/* 复制第一组图片以实现无缝效果 */}
-              <div className="flex gap-4 infinite-scroll-content">
-                {[...Array(30)].map((_, index) => (
-                  <div key={`spirit-1-${index}-clone`} className="w-48 h-48 flex-shrink-0 rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer">
-                    <img
-                      src={`/images/spirits/spirit-${index + 1}.png`}
-                      alt={`数灵形象 ${index + 1}`}
-                      className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
                 ))}
@@ -84,38 +88,28 @@ const Home: NextPage = () => {
             </div>
           </div>
 
-          {/* 第二行 - 向右滚动 */}
+          {/* Second row - right scroll */}
           <div className="relative mt-4">
-            <div className="flex gap-4 infinite-scroll-track-reverse">
-              {/* 第一组图片 */}
-              <div className="flex gap-4 infinite-scroll-content">
-                {[...Array(30)].map((_, index) => (
-                  <div key={`spirit-2-${index}`} className="w-48 h-48 flex-shrink-0 rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer">
+            <div className="mask-left image-wall-mask" />
+            <div className="mask-right image-wall-mask" />
+            <div className="flex gap-4 overflow-hidden">
+              <div className="flex gap-4 animate-infinite-scroll-reverse">
+                {[...randomImages2, ...randomImages2].map((src, index) => (
+                  <div 
+                    key={`spirit-2-${index}`} 
+                    className="w-48 h-48 flex-shrink-0 rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer"
+                  >
                     <img
-                      src={`/images/spirits/spirit-${index + 30}.png`}
+                      src={src}
                       alt={`数灵形象 ${index + 30}`}
                       className="w-full h-full object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
-              {/* 复制第一组图片以实现无缝效果 */}
-              <div className="flex gap-4 infinite-scroll-content">
-                {[...Array(30)].map((_, index) => (
-                  <div key={`spirit-2-${index}-clone`} className="w-48 h-48 flex-shrink-0 rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer">
-                    <img
-                      src={`/images/spirits/spirit-${index + 30}.png`}
-                      alt={`数灵形象 ${index + 30}`}
-                      className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </div>
                 ))}
               </div>
             </div>
           </div>
-
-          {/* 下层渐变遮罩 */}
-          <div className="absolute bottom-0 left-0 right-0 h-25 bg-gradient-to-t from-[#1a1f2e] to-transparent z-10"></div>
         </div>
       </section>
 
@@ -134,7 +128,7 @@ const Home: NextPage = () => {
             />
             <FeatureCard 
               title="对战技能"
-              description="攻击防御增益减益终结技能，搭配十大属性相生相克，形成独特的战斗体系"
+              description="攻击、防御、治疗、增益、减益、终结技能，搭配十大属性相生相克，形成独特的战斗体系"
               icon="🔥"
             />
             <FeatureCard 

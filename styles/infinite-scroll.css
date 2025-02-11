@@ -1,0 +1,42 @@
+@keyframes infinite-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes infinite-scroll-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 40s linear infinite;
+  min-width: 200%;
+}
+
+.animate-infinite-scroll-reverse {
+  animation: infinite-scroll-reverse 40s linear infinite;
+  min-width: 200%;
+}
+
+.animate-infinite-scroll:hover,
+.animate-infinite-scroll-reverse:hover {
+  animation-play-state: paused;
+}
+
+.image-wall-mask {
+  position: absolute;
+  height: 100%;
+  width: 15%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.mask-left {
+  left: 0;
+  background: linear-gradient(to right, #1a1f2e, transparent);
+}
+
+.mask-right {
+  right: 0;
+  background: linear-gradient(to left, #1a1f2e, transparent);
+} 
