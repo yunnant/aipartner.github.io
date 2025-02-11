@@ -59,7 +59,7 @@ const Home: NextPage = () => {
             <div className="flex gap-4 infinite-scroll-track">
               {/* 第一组图片 */}
               <div className="flex gap-4 infinite-scroll-content">
-                {[...Array(20)].map((_, index) => (
+                {[...Array(30)].map((_, index) => (
                   <div key={`spirit-1-${index}`} className="w-48 h-48 flex-shrink-0 rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer">
                     <img
                       src={`/images/spirits/spirit-${index + 1}.png`}
@@ -71,7 +71,7 @@ const Home: NextPage = () => {
               </div>
               {/* 复制第一组图片以实现无缝效果 */}
               <div className="flex gap-4 infinite-scroll-content">
-                {[...Array(20)].map((_, index) => (
+                {[...Array(30)].map((_, index) => (
                   <div key={`spirit-1-${index}-clone`} className="w-48 h-48 flex-shrink-0 rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer">
                     <img
                       src={`/images/spirits/spirit-${index + 1}.png`}
@@ -89,11 +89,11 @@ const Home: NextPage = () => {
             <div className="flex gap-4 infinite-scroll-track-reverse">
               {/* 第一组图片 */}
               <div className="flex gap-4 infinite-scroll-content">
-                {[...Array(20)].map((_, index) => (
+                {[...Array(30)].map((_, index) => (
                   <div key={`spirit-2-${index}`} className="w-48 h-48 flex-shrink-0 rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer">
                     <img
-                      src={`/images/spirits/spirit-${index + 20}.png`}
-                      alt={`数灵形象 ${index + 20}`}
+                      src={`/images/spirits/spirit-${index + 30}.png`}
+                      alt={`数灵形象 ${index + 30}`}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -101,11 +101,11 @@ const Home: NextPage = () => {
               </div>
               {/* 复制第一组图片以实现无缝效果 */}
               <div className="flex gap-4 infinite-scroll-content">
-                {[...Array(20)].map((_, index) => (
+                {[...Array(30)].map((_, index) => (
                   <div key={`spirit-2-${index}-clone`} className="w-48 h-48 flex-shrink-0 rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer">
                     <img
-                      src={`/images/spirits/spirit-${index + 20}.png`}
-                      alt={`数灵形象 ${index + 20}`}
+                      src={`/images/spirits/spirit-${index + 30}.png`}
+                      alt={`数灵形象 ${index + 30}`}
                       className="w-full h-full object-cover"
                     />
                   </div>
