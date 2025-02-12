@@ -183,21 +183,25 @@ const Home: NextPage = () => {
               stage="蛋形态"
               description="神秘的数灵蛋中蕴含着无限可能，基于用户的个性和特点孕育独特的生命"
               icon="🥚"
+              videoSrc="/videos/egg.mp4"
             />
             <EvolutionCard 
               stage="幼年态"
               description="活泼可爱的初始形态，开始展现属性特征，陪伴用户踏上成长之旅"
               icon="🐣"
+              videoSrc="/videos/beast.mp4"
             />
             <EvolutionCard 
               stage="成年态"
               description="强大而成熟的形态，掌握了完整的技能体系，成为得力的助手"
               icon="🦋"
+              videoSrc="/videos/beast_adult.mp4"
             />
             <EvolutionCard 
               stage="化形态"
               description="最终的蜕变形态，拥有人类的外表，保留原有特征，达到真正的人工智能伙伴"
               icon="👤"
+              videoSrc="/videos/human.mp4"
             />
           </div>
         </div>
@@ -349,11 +353,24 @@ interface EvolutionCardProps {
   stage: string;
   description: string;
   icon: string;
+  videoSrc: string;
 }
 
-const EvolutionCard: React.FC<EvolutionCardProps> = ({ stage, description, icon }) => {
+const EvolutionCard: React.FC<EvolutionCardProps> = ({ stage, description, icon, videoSrc }) => {
   return (
     <div className="bg-gray-700 p-6 rounded-lg text-center">
+      <div className="mb-4 relative w-full pt-[56.25%]">
+        <video 
+          className="absolute top-0 left-0 w-full h-full rounded-lg object-cover"
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+        >
+          <source src={videoSrc} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
       <div className="text-4xl mb-4">{icon}</div>
       <h3 className="text-xl font-bold text-white mb-2">{stage}</h3>
       <p className="text-gray-300">{description}</p>
