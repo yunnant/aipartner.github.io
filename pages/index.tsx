@@ -359,7 +359,7 @@ interface EvolutionCardProps {
 const EvolutionCard: React.FC<EvolutionCardProps> = ({ stage, description, icon, videoSrc }) => {
   return (
     <div className="bg-gray-700 p-6 rounded-lg text-center">
-      <div className="mb-4 relative w-full pt-[56.25%]">
+      <div className="mb-4 relative w-full pt-[45%]">
         <video 
           className="absolute top-0 left-0 w-full h-full rounded-lg object-cover object-top"
           autoPlay 
