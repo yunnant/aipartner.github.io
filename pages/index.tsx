@@ -361,7 +361,7 @@ const EvolutionCard: React.FC<EvolutionCardProps> = ({ stage, description, icon,
     <div className="bg-gray-700 p-6 rounded-lg text-center">
       <div className="mb-4 relative w-full pt-[56.25%]">
         <video 
-          className="absolute top-0 left-0 w-full h-full rounded-lg object-cover"
+          className="absolute top-0 left-0 w-full h-full rounded-lg object-cover object-top"
           autoPlay 
           loop 
           muted 
