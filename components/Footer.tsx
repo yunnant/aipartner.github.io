@@ -35,7 +35,18 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-sm text-center">
-          © 2025 数灵伙伴. All rights reserved.
+          <div className="flex justify-center items-center space-x-2">
+            <span>© 2025 数灵伙伴. All rights reserved.</span>
+            <span className="text-gray-600">|</span>
+            <a 
+              href="https://beian.miit.gov.cn" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-gray-300"
+            >
+              辽ICP备2025049525号
+            </a>
+          </div>
         </div>
       </div>
     </footer>
