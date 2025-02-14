@@ -327,8 +327,19 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-    
-
+      {/* Footer Section with ICP */}
+      <footer className="bg-gray-900 py-6">
+        <div className="container mx-auto px-6 text-center">
+          <a 
+            href="https://beian.miit.gov.cn" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-gray-300 text-sm"
+          >
+            辽ICP备2025049525号
+          </a>
+        </div>
+      </footer>
     </div>
   )
 }
